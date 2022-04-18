@@ -12,6 +12,14 @@ render(
 			<Route path="/" element={<App />}>
 				<Route path="expenses" element={<Expenses />} />
 				<Route path="invoices" element={<Invoices />} />
+				<Route
+					path="*" // It will match only when no other routes do
+					element={
+						<main style={{ padding: "1rem" }}>
+							<p>There's nothing here!</p>
+						</main>
+					}
+				/>
 			</Route>
 		</Routes>
 	</BrowserRouter>,
