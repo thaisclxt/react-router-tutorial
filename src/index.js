@@ -13,6 +13,14 @@ render(
 			<Route path="/" element={<App />}>
 				<Route path="expenses" element={<Expenses />} />
 				<Route path="invoices" element={<Invoices />}>
+					<Route
+						index // the index route shares the path of the parent. That's the whole point--it doesn't have a path.
+						element={
+							<main style={{ padding: "1rem" }}>
+								<p>Select an invoice</p>
+							</main>
+						}
+					/>
 					<Route path=":invoiceId" element={<Invoice />} />
 				</Route>
 				<Route
