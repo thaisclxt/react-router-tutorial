@@ -1,4 +1,5 @@
 import { NavLink, Outlet, useSearchParams } from "react-router-dom";
+import { QueryNavLink } from "./queryNavLink";
 import { getInvoices } from "../data";
 
 export default function Invoices() {
@@ -7,7 +8,7 @@ export default function Invoices() {
 
 	return (
 		<div style={{ display: "flex" }}>
-			<nav
+			<QueryNavLink
 				style={{
 					borderRight: "solid 1px",
 					padding: "1rem",
@@ -46,7 +47,7 @@ export default function Invoices() {
 							{invoice.name}
 						</NavLink>
 					))}
-			</nav>
+			</QueryNavLink>
 			<Outlet />
 		</div>
 	);
